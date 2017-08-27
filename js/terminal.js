@@ -1,8 +1,8 @@
 function output (input, flag) {
     if (flag == 'error') {
-        var outputText = '<div class = \'error\'>' + input + '</div>';
+        var outputText = '<div class = \'output-line error\'>' + input + '</div>';
     } else if (flag == 'notification') {
-        var outputText = '<div class = \'notification\'>' + input + '</div>';
+        var outputText = '<div class = \'output-line notification\'>' + input + '</div>';
     } else {
         var outputText = '<div>' + input + '</div>';
     }
