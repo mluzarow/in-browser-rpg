@@ -7,7 +7,7 @@ class Player
         this.xp = 0;
         this.maxhp = 10;
         this.hp = this.maxhp;
-        this.maxmana = 5
+        this.maxmana = 5;
         this.mana = this.maxmana;
         this.weapon = "sword";
         this.damage = 6;
