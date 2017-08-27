@@ -16,19 +16,19 @@ class Player
 {
     constructor (cname)
     {
-    this.name = name;
-    this.level = 1;
-    this.xp = 0;
-    this.maxhp = 10;
-    this.hp = maxhp;
-    this.maxmana = 5
-    this.mana = maxmana;
-    this.weapon = "sword";
-    this.damage = 6;
-    this.spell = "power bolt";
-    this.spelldam =  4;
-    this.healpot = 1;
-    this.manapot = 0;
+        this.playername = cname;
+        this.level = 1;
+        this.xp = 0;
+        this.maxhp = 10;
+        this.hp = this.maxhp;
+        this.maxmana = 5
+        this.mana = this.maxmana;
+        this.weapon = "sword";
+        this.damage = 6;
+        this.spell = "power bolt";
+        this.spelldam =  4;
+        this.healpot = 1;
+        this.manapot = 0;
     }
     HealMe()
     {
@@ -56,10 +56,10 @@ class Player
     }
     LevelUp()
     {
-    this.level++;
-    this.xp = 0;
-    this.maxhp += 5;
-    this.maxmana += 3;
+        this.level++;
+        this.xp = 0;
+        this.maxhp += 5;
+        this.maxmana += 3;
     }
     
 }
