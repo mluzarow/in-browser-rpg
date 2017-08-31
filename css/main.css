@@ -6,3 +6,13 @@ body {
     font-size: 14px;
     vertical-align: baseline;
 }
+
+.grid_box {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+}
