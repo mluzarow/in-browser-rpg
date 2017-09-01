@@ -9,13 +9,14 @@
 function gridify (mapName) {
     var drawSpace = document.getElementById('draw-space');
     var boardWidth = maps[mapName]['width'];
+    var RESC_PATH = '../content/img/tiles/';
 
     for (var x = 0; x < maps[mapName]['data'].length; x++) {
         var box = maps[mapName]['data'][x];
 
         // Only render if 'render' flag is true
         if (box['render'] === true) {
-            drawSpace.innerHTML += drawBox (box['index'], box['bg'], boardWidth, 40);
+            drawSpace.innerHTML += drawBox (box['index'], RESC_PATH + box['bg'] + '.png', boardWidth, 40);
         } else {
             drawSpace.innerHTML += drawBox (box['index'], '', boardWidth, 40, true);
         }
@@ -44,7 +45,7 @@ function drawBox (index, tilePath, boardWidth, boxSize, hidden=false) {
         'left: ' + (boxSize * (index % boardWidth)) + 'px;';
 
     if (!hidden) {
-        style += ' background-image: url(\'' + tilePath + '.png\');"';
+        style += ' background-image: url(\'' + tilePath + '\');"';
         var classes = 'grid_box';
     } else {
         style += ' "';
