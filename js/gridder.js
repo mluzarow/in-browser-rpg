@@ -10,8 +10,15 @@ function gridify (mapName) {
     var drawSpace = document.getElementById('draw-space');
     var boardWidth = maps[mapName]['width'];
 
-    for (var box in maps[mapName]['data']) {
-        drawSpace.innerHTML += drawBox (box, box['bg'], boardWidth, 40);
+    for (var x = 0; x < maps[mapName]['data'].length; x++) {
+        var box = maps[mapName]['data'][x];
+
+        // Only render if 'render' flag is true
+        if (box['render'] === true) {
+            drawSpace.innerHTML += drawBox (box['index'], box['bg'], boardWidth, 40);
+        } else {
+            drawSpace.innerHTML += drawBox (box['index'], '', boardWidth, 40, true);
+        }
     }
 }
 
@@ -30,12 +37,19 @@ function gridify (mapName) {
  *
  * @return  {string}  The HTML output of the constructed tile box.
  */
-function drawBox (index, tilePath, boardWidth, boxSize) {
+function drawBox (index, tilePath, boardWidth, boxSize, hidden=false) {
     var style =
         'style = "' +
         'top: ' + (boxSize * ~~(index / boardWidth)) + 'px; ' +
-        'left: ' + (boxSize * (index % boardWidth)) + 'px; ' +
-        'background-image: url(\'' + tilePath + '.png\'); "';
+        'left: ' + (boxSize * (index % boardWidth)) + 'px;';
 
-    return '<div class = "grid_box" ' + style + '></div>';
+    if (!hidden) {
+        style += ' background-image: url(\'' + tilePath + '.png\');"';
+        var classes = 'grid_box';
+    } else {
+        style += ' "';
+        var classes = 'grid_box_hidden';
+    }
+
+    return '<div class = "' + classes + '" ' + style + '></div>';
 }

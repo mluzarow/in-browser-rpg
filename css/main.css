@@ -16,3 +16,9 @@ body {
     height: 40px;
     width: 40px;
 }
+
+.grid_box_hidden {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+}

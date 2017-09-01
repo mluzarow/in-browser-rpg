@@ -1,31 +1,37 @@
 var maps = {
     'testMap1' : {
         'width' : '3',
-        'data' : {
-            0 : {
+        'data' : [
+            {
+                'index' : 0,
                 'render' : true,
                 'bg' : 'red'
             },
-            1 : {
+            {
+                'index' : 1,
                 'render' : true,
                 'bg' : 'red'
             },
-            2 : {
+            {
+                'index' : 2,
+                'render' : false,
+                'bg' : 'red'
+            },
+            {
+                'index' : 3,
                 'render' : true,
                 'bg' : 'red'
             },
-            3 : {
-                'render' : true,
+            {
+                'index' : 4,
+                'render' : false,
                 'bg' : 'red'
             },
-            4 : {
-                'render' : true,
-                'bg' : 'red'
-            },
-            5 : {
+            {
+                'index' : 5,
                 'render' : true,
                 'bg' : 'blue'
             }
-        }
+        ]
     }
 }
