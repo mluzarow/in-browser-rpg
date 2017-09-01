@@ -1,3 +1,3 @@
-# One day game
+# In-browser RPG
 
-A game created in one day for fun.
+An RPG created in pure JS that runs entirely in your browser.
