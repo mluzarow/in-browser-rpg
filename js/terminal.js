@@ -1,3 +1,8 @@
+/*
+    Outputs
+    @param input - message
+    @param flag - message type
+    */
 function output (input, flag) {
     if (flag == 'error') {
         var outputText = '<div class = \'output-line error\'>' + input + '</div>';
