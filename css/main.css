@@ -16,7 +16,7 @@ body {
     vertical-align: baseline;
 }
 
-#draw-space {
+#draw-space-container {
     flex: 4;
 }
 
