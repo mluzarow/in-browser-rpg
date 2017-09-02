@@ -1,0 +1,33 @@
+#side-tab-container {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.side-tab {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.side-tab-content {
+
+}
+
+/* --------------- TAB THEMES --------------- */
+.side-tab-summary {
+    background-color: red;
+    background-image: url('../content/img/menu/summary_tab.png');
+}
+
+.side-tab-summary:hover {
+    background-color: darkred;
+    background-image: url('../content/img/menu/summary_tab_hover.png');
+}
