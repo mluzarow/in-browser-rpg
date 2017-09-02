@@ -9,7 +9,7 @@
 function gridify (mapName) {
     var drawSpace = document.getElementById('draw-space');
     var boardWidth = maps[mapName]['width'];
-    var RESC_PATH = '../content/img/tiles/';
+    var RESC_PATH = 'content/img/tiles/';
 
     for (var x = 0; x < maps[mapName]['data'].length; x++) {
         var box = maps[mapName]['data'][x];
