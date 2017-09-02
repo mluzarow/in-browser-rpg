@@ -14,12 +14,14 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    vertical-align: top;
 }
 
 .side-tab-content-wrap {
     width: 280px;
     display: inline-block;
     border: 1px solid black;
+    overflow: hidden;
 }
 
 .side-tab-content {
