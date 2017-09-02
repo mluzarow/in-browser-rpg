@@ -35,3 +35,12 @@ body {
     height: 40px;
     width: 40px;
 }
+
+.player {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 20px;
+    width: 20px;
+}
