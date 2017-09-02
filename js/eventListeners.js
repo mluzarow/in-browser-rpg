@@ -18,13 +18,14 @@ function tab_summary_click () {
     var target = document.getElementById ('content_summary');
 
     // Target tab is currently open, so close it
-    if (target.style.width != '0px') {
-        target.style.width = '0px';
+    if (target.classList.contains ('side-tab-open')) {
+        target.classList.remove ('side-tab-open');
+
     // Target tab is currently closed, so close all others and open this one
     } else {
         for (var i = 0; i < tabContentBoxes.length; i++) {
-            tabContentBoxes [i].style.width = '0px';
+            tabContentBoxes [i].classList.remove ('side-tab-open');
         }
-        target.style.width = '280px';
+        target.classList.add ('side-tab-open');
     }
 }

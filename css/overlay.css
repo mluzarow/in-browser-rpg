@@ -19,9 +19,9 @@
 }
 
 .side-tab-content-wrap {
-    width: 0px;
+    width: 0;
+    height: 0;
     display: inline-block;
-    border: 1px solid black;
     overflow: hidden;
 }
 
@@ -47,6 +47,12 @@
     flex: 1;
 }
 
+.side-tab-open {
+    width: 280px;
+    height: auto;
+    border: 1px solid black;
+}
+
 /* --------------- SUMMARY TAB --------------- */
 .side-tab-summary {
     background-color: red;
@@ -58,10 +64,12 @@
     background-image: url('../content/img/menu/summary_tab_hover.png');
 }
 
-.side-content-summary-box-earring-1 {
+.side-content-box-earring-1 {
+    background-image: url('../content/img/menu/slot_earring_placeholder.png');
 }
 
-.side-content-summary-box-earring-2 {
+.side-content-box-earring-2 {
+    background-image: url('../content/img/menu/slot_earring_placeholder.png');
 }
 
 .side-content-summary-box-hat {
