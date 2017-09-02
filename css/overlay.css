@@ -10,15 +10,72 @@
     position: relative;
     height: 40px;
     width: 40px;
-    float: right;
-    display: block;
+    display: inline-block;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
 }
 
-.side-tab-content {
+.side-tab-content-wrap {
+    width: 280px;
+    display: inline-block;
+    border: 1px solid black;
+}
 
+.side-tab-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.side-content-box {
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.side-content-flex-row {
+    display: flex;
+    flex: 1;
+}
+
+.side-content-flex-col {
+    flex: 1;
+}
+
+/* --------------- SUMMARY TAB ---------------  */
+.side-content-summary {
+    width: 400px;
+}
+
+.side-content-summary-box-earring-1 {
+}
+
+.side-content-summary-box-earring-2 {
+}
+
+.side-content-summary-box-hat {
+}
+
+.side-content-summary-box-weapon {
+}
+
+.side-content-summary-box-necklace {
+}
+
+.side-content-summary-box-innerwear {
+}
+
+.side-content-summary-box-belt {
+}
+
+.side-content-summary-box-armor {
+}
+
+.side-content-summary-box-gloves {
+}
+
+.side-content-summary-box-shoes {
 }
 
 /* --------------- TAB THEMES --------------- */
