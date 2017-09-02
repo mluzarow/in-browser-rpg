@@ -5,32 +5,32 @@ var maps = {
             {
                 'index' : 0,
                 'render' : true,
-                'bg' : 'red'
+                'bg' : 'tile_normal'
             },
             {
                 'index' : 1,
                 'render' : true,
-                'bg' : 'red'
+                'bg' : 'tile_normal'
             },
             {
                 'index' : 2,
                 'render' : false,
-                'bg' : 'red'
+                'bg' : ''
             },
             {
                 'index' : 3,
                 'render' : true,
-                'bg' : 'red'
+                'bg' : 'tile_wall'
             },
             {
                 'index' : 4,
                 'render' : false,
-                'bg' : 'red'
+                'bg' : ''
             },
             {
                 'index' : 5,
                 'render' : true,
-                'bg' : 'blue'
+                'bg' : 'tile_normal'
             }
         ]
     }
