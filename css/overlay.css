@@ -3,6 +3,7 @@
     height: 100%;
     top: 0;
     right: 0;
+    text-align: right;
     z-index: 2;
 }
 
@@ -18,13 +19,14 @@
 }
 
 .side-tab-content-wrap {
-    width: 280px;
+    width: 0px;
     display: inline-block;
     border: 1px solid black;
     overflow: hidden;
 }
 
 .side-tab-content {
+    margin: 10px 0;
     display: flex;
     flex-direction: column;
 }
@@ -45,9 +47,15 @@
     flex: 1;
 }
 
-/* --------------- SUMMARY TAB ---------------  */
-.side-content-summary {
-    width: 400px;
+/* --------------- SUMMARY TAB --------------- */
+.side-tab-summary {
+    background-color: red;
+    background-image: url('../content/img/menu/summary_tab.png');
+}
+
+.side-tab-summary:hover {
+    background-color: darkred;
+    background-image: url('../content/img/menu/summary_tab_hover.png');
 }
 
 .side-content-summary-box-earring-1 {
@@ -80,13 +88,35 @@
 .side-content-summary-box-shoes {
 }
 
-/* --------------- TAB THEMES --------------- */
-.side-tab-summary {
-    background-color: red;
-    background-image: url('../content/img/menu/summary_tab.png');
+/* --------------- EFFECTS TAB --------------- */
+.side-tab-effects {
+    background-color: lightyellow;
+    background-image: url('../content/img/menu/effects_tab.png');
 }
 
-.side-tab-summary:hover {
-    background-color: darkred;
-    background-image: url('../content/img/menu/summary_tab_hover.png');
+.side-tab-effects:hover {
+    background-color: yellow;
+    background-image: url('../content/img/menu/effects_tab_hover.png');
+}
+
+/* --------------- INVENTORY TAB --------------- */
+.side-tab-inventory {
+    background-color: blue;
+    background-image: url('../content/img/menu/inventory_tab.png');
+}
+
+.side-tab-inventory:hover {
+    background-color: darkblue;
+    background-image: url('../content/img/menu/inventory_tab_hover.png');
+}
+
+/* --------------- SPELLS TAB --------------- */
+.side-tab-spells {
+    background-color: blue;
+    background-image: url('../content/img/menu/spells_tab.png');
+}
+
+.side-tab-spells:hover {
+    background-color: darkblue;
+    background-image: url('../content/img/menu/spells_tab_hover.png');
 }

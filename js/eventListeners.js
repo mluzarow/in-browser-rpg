@@ -1,3 +1,6 @@
+/**
+ * Initializes event listeners for the game.
+ */
 function initializeEventListeners () {
     var tabs = document.getElementsByClassName('side-tab');
 
@@ -6,6 +9,10 @@ function initializeEventListeners () {
     }
 }
 
+/**
+ * Event listener for the tab relating to the summary page. Opens and closes
+ * the tab when clicked.
+ */
 function tab_summary_click () {
     var tabContentBoxes = document.getElementsByClassName ('side-tab-content-wrap');
     var target = document.getElementById ('content_summary');
@@ -18,7 +25,6 @@ function tab_summary_click () {
         for (var i = 0; i < tabContentBoxes.length; i++) {
             tabContentBoxes [i].style.width = '0px';
         }
-
         target.style.width = '280px';
     }
 }
