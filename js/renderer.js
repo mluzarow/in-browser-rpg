@@ -1,11 +1,35 @@
 class Renderer {
+    /**
+     * Constructor for Renderer object.
+     */
     constructor () {
+        /**
+         * @const  {int}  The height of the rendering area in pixels.
+         */
         this.RENDER_WINDOW_HEIGHT = this.setRenderWindowHeight ();
+        /**
+         * @const  {int}  The width of the rendering area in pixels.
+         */
         this.RENDER_WINDOW_WIDTH = this.setRenderWindowWidth ();
+        /**
+         * @const  {string}  The path to the tile images.
+         */
         this.TILE_PATH = 'content/img/tiles/';
+        /**
+         * @const  {int}  The size of a map tile in pixels.
+         */
         this.BOX_SIZE = 40;
+        /**
+         * @const  {int}  The width of a map tile via isometric projection.
+         */
         this.BOX_WIDTH_ISOMETRIC = Math.sqrt (this.BOX_SIZE * this.BOX_SIZE * 2);
+        /**
+         * @const  {int}  The height of a map tile via isometric projection.
+         */
         this.BOX_HEIGHT_ISOMETRIC = this.BOX_WIDTH_ISOMETRIC / 2;
+        /**
+         * @const  {element}  The render space element.
+         */
         this.drawSpace = document.getElementById ('draw-space');
     }
 
