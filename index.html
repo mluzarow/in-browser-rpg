@@ -1,15 +1,176 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/maps.js"></script>
+    <script type="text/javascript" src="js/eventListeners.js"></script>
     <script type="text/javascript" src="js/terminal.js"></script>
-    
+    <script type="text/javascript" src="js/renderer.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+
     <title>SOME_NAME</title>
 </head>
 
 <body>
+    <div id = "draw-space-container">
+        <div id = "draw-space">
+        </div>
+    </div>
+
     <div id = "output-container">
+    </div>
+
+    <div id = "side-tab-container">
+        <!-- Summary tab -->
+        <div id = "tab_summary" class = "side-tab side-tab-summary"></div>
+        <div id = "content_summary" class = "side-tab-content-wrap">
+            <div class = "side-tab-content">
+                <!-- Flex display row 1 of 7 -->
+                <div class = "side-content-flex-row">
+                    <!-- Flex display column 1 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-earring-1">
+                        </div>
+                    </div>
+                    <!-- Flex display column 2 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                    <!-- Flex display column 3 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-earring-2">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flex display row 2 of 7 -->
+                <div class = "side-content-flex-row">
+                    <!-- Flex display column 1 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                    <!-- Flex display column 2 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-hat">
+                        </div>
+                    </div>
+                    <!-- Flex display column 3 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                </div>
+
+                <!-- Flex display row 3 of 7 -->
+                <div class = "side-content-flex-row">
+                    <!-- Flex display column 1 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                    <!-- Flex display column 2 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-necklace">
+                        </div>
+                    </div>
+                    <!-- Flex display column 3 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                </div>
+
+                <!-- Flex display row 4 of 7 -->
+                <div class = "side-content-flex-row">
+                    <!-- Flex display column 1 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-weapon">
+                        </div>
+                    </div>
+                    <!-- Flex display column 2 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                    <!-- Flex display column 3 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-armor">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flex display row 5 of 7 -->
+                <div class = "side-content-flex-row">
+                    <!-- Flex display column 1 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                    <!-- Flex display column 2 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-innerwear">
+                        </div>
+                    </div>
+                    <!-- Flex display column 3 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                </div>
+
+                <!-- Flex display row 6 of 7 -->
+                <div class = "side-content-flex-row">
+                    <!-- Flex display column 1 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                    <!-- Flex display column 2 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-belt">
+                        </div>
+                    </div>
+                    <!-- Flex display column 3 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                </div>
+
+                <!-- Flex display row 7 of 7 -->
+                <div class = "side-content-flex-row">
+                    <!-- Flex display column 1 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-gloves">
+                        </div>
+                    </div>
+                    <!-- Flex display column 2 of 3 -->
+                    <div class = "side-content-flex-col">
+                    </div>
+                    <!-- Flex display column 3 of 3 -->
+                    <div class = "side-content-flex-col">
+                        <div class = "side-content-box side-content-box-shoes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Effects tab -->
+        <div id = "tab_effects" class = "side-tab side-tab-effects"></div>
+
+        <div id = "content_effects" class = "side-tab-content-wrap">
+            <div class = "side-tab-content">
+
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Inventory tab -->
+        <div id = "tab_inventory" class = "side-tab side-tab-inventory"></div>
+
+        <div id = "content_inventory" class = "side-tab-content-wrap">
+            <div class = "side-tab-content">
+
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Spells tab -->
+        <div id = "tab_spells" class = "side-tab side-tab-spells"></div>
+
+        <div id = "content_spells" class = "side-tab-content-wrap">
+            <div class = "side-tab-content">
+
+            </div>
+        </div>
     </div>
 </body>
 </html>
