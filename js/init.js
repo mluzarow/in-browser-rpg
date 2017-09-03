@@ -1,6 +1,11 @@
 window.onload = function () {
     cleanUpDOM (document.body);
-	initializeEventListeners ();
+    initializeEventListeners ();
+
+    // Temp testing stuff goes here
+    r = new Renderer ();
+    r.generateGrid ('testMap1');
+    r.center ();
 }
 
 /**
