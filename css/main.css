@@ -19,6 +19,11 @@ body {
 
 #draw-space-container {
     flex: 4;
+    overflow: hidden;
+}
+
+#draw-space {
+    position: absolute;
 }
 
 .grid_box {

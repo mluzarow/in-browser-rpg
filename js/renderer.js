@@ -1,10 +1,20 @@
 class Renderer {
     constructor () {
+        this.RENDER_WINDOW_HEIGHT = this.setRenderWindowHeight ();
+        this.RENDER_WINDOW_WIDTH = this.setRenderWindowWidth ();
         this.TILE_PATH = 'content/img/tiles/';
         this.BOX_SIZE = 40;
         this.BOX_WIDTH_ISOMETRIC = Math.sqrt (this.BOX_SIZE * this.BOX_SIZE * 2);
         this.BOX_HEIGHT_ISOMETRIC = this.BOX_WIDTH_ISOMETRIC / 2;
         this.drawSpace = document.getElementById ('draw-space');
+    }
+
+    /**
+     * Centers the draw space within the draw space container.
+     */
+    center () {
+        this.drawSpace.style.top = this.RENDER_WINDOW_HEIGHT / 2 + 'px';
+        this.drawSpace.style.left = this.RENDER_WINDOW_WIDTH / 2 + 'px';
     }
 
     /**
@@ -61,7 +71,7 @@ class Renderer {
         var leftPX =
             (this.BOX_WIDTH_ISOMETRIC / 2) * (index % boardWidth) -
             ~~(index / boardWidth) * (this.BOX_WIDTH_ISOMETRIC / 2);
-        
+
         var style =
             'style = "' +
             'top: ' + topPX + 'px; ' +
@@ -98,5 +108,35 @@ class Renderer {
             'background-image: url(\'content/img/tile/player.png\');';
 
         return '<div id = "player" style = ' + style + '></div>';
+    }
+
+    /**
+     * Setter for the render window height.
+     *
+     * @return  {float}  Height of the render window is pixels.
+     */
+    setRenderWindowHeight () {
+        var heightGet =
+            window.getComputedStyle (
+                document.getElementById ('draw-space-container'),
+                null
+            ).getPropertyValue ('height');
+
+        return parseFloat (heightGet.substr (0, heightGet.length - 2));
+    }
+
+    /**
+     * Setter for the render window width.
+     *
+     * @return  {float}  Width of the render window in pixels.
+     */
+    setRenderWindowWidth () {
+        var widthGet =
+            window.getComputedStyle (
+                document.getElementById ('draw-space-container'),
+                null
+            ).getPropertyValue ('width');
+
+        return parseFloat (widthGet.substr (0, widthGet.length - 2));
     }
 }
