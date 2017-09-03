@@ -7,6 +7,24 @@ function initializeEventListeners () {
     for (var i = 0; i < tabs.length; i++) {
         tabs [i].addEventListener ("mousedown", window [tabs [i].id + "_click"], false);
     }
+
+    document.getElementById ('draw-space-container').addEventListener ("mousedown", mouseDown, false);
+    document.getElementById ('draw-space-container').addEventListener ("mouseup", mouseUp, false);
+}
+
+function mouseDown (e) {
+    // Stop default mouseDown functions while dragging
+    e.preventDefault ();
+    window.addEventListener ("mousemove", drawSpace_drag, true);
+}
+
+function mouseUp () {
+    window.removeEventListener ("mousemove", drawSpace_drag, true);
+}
+
+function drawSpace_drag (e) {
+    r.drawSpace.style.top = e.clientY + 'px';
+    r.drawSpace.style.left = e.clientX + 'px';
 }
 
 /**
