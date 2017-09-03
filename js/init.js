@@ -1,6 +1,6 @@
 window.onload = function () {
     cleanUpDOM (document.body);
-	initializeEventListeners ();
+    initializeEventListeners ();
 }
 
 /**
