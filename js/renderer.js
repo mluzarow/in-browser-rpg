@@ -2,18 +2,21 @@ class Renderer {
     constructor () {
         this.TILE_PATH = 'content/img/tiles/';
         this.BOX_SIZE = 40;
-        this.drawSpace = document.getElementById('draw-space');
+        this.BOX_WIDTH_ISOMETRIC = Math.sqrt (this.BOX_SIZE * this.BOX_SIZE * 2);
+        this.BOX_HEIGHT_ISOMETRIC = this.BOX_WIDTH_ISOMETRIC / 2;
+        this.drawSpace = document.getElementById ('draw-space');
     }
 
     /**
-    * Using a js map file (maps.js), renders entire map to screen.
+    * Using a js map file (maps.js), renders entire map via isometric projection
+    * to the screen.
     *
     * @uses  this.drawBox()  Renders individual boxes to the play area.
     * @uses  maps.js->maps   Maps content array holding all map data.
     *
     * @param  {string}  mapName  The name of the map file that is to be rendered.
     */
-    gridify (mapName) {
+    generateGrid (mapName) {
         var boardWidth = maps[mapName]['width'];
 
         for (var x = 0; x < maps[mapName]['data'].length; x++) {
@@ -48,15 +51,21 @@ class Renderer {
      * @param  {string}  tilePath    The path of the tile background resource that is
      *                               to be rendered with the tile.
      * @param  {int}     boardWidth  The width (in tiles) of the current map.
-     * @param  {int}     boxSize     The width of the square tiles used in this map.
      *
      * @return  {string}  The HTML output of the constructed tile box.
      */
     drawBox (index, tilePath, boardWidth, hidden=false) {
+        var topPX =
+            (this.BOX_HEIGHT_ISOMETRIC / 2) * (index % boardWidth) +
+            ~~(index / boardWidth) * (this.BOX_HEIGHT_ISOMETRIC / 2);
+        var leftPX =
+            (this.BOX_WIDTH_ISOMETRIC / 2) * (index % boardWidth) -
+            ~~(index / boardWidth) * (this.BOX_WIDTH_ISOMETRIC / 2);
+        
         var style =
             'style = "' +
-            'top: ' + (this.BOX_SIZE * ~~(index / boardWidth)) + 'px; ' +
-            'left: ' + (this.BOX_SIZE * (index % boardWidth)) + 'px;';
+            'top: ' + topPX + 'px; ' +
+            'left: ' + leftPX + 'px;';
 
         if (!hidden) {
             style += ' background-image: url(\'' + tilePath + '\');"';
@@ -69,5 +78,25 @@ class Renderer {
         return '<div class = "' + classes + '" ' + style + '></div>';
     }
 
-    
+    /**
+     * Draws the player element.
+     *
+     * @param  {int}  index       The index of the box that is currently being
+     *                            rendered. The index is linear, starting from 0
+     *                            for the first value on the top left and continuing
+     *                            from left to right, top to bottom, until reaching
+     *                            the bottom right.
+     * @param  {int}  boardWidth  The width (in tiles) of the current map.
+     *
+     * @return {string} The HTML output of the constructed player element.
+     */
+    drawPlayer (index, boardWidth) {
+        var style =
+            'style = "' +
+            'top: ' + (20 * ~~(index / boardWidth)) + 'px; ' +
+            'left: ' + (20 * (index % boardWidth)) + 'px; ' +
+            'background-image: url(\'content/img/tile/player.png\');';
+
+        return '<div id = "player" style = ' + style + '></div>';
+    }
 }

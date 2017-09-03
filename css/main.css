@@ -29,10 +29,12 @@ body {
     border: 1px solid black;
     height: 40px;
     width: 40px;
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
 }
 
 .grid_box_hidden {
     position: absolute;
     height: 40px;
     width: 40px;
+    transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
 }
