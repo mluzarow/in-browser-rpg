@@ -20,14 +20,6 @@ class Renderer {
          */
         this.BOX_SIZE = 40;
         /**
-         * @const  {int}  The width of a map tile via isometric projection.
-         */
-        this.BOX_WIDTH_ISOMETRIC = Math.sqrt (this.BOX_SIZE * this.BOX_SIZE * 2);
-        /**
-         * @const  {int}  The height of a map tile via isometric projection.
-         */
-        this.BOX_HEIGHT_ISOMETRIC = this.BOX_WIDTH_ISOMETRIC / 2;
-        /**
          * @const  {element}  The render space element.
          */
         this.drawSpace = document.getElementById ('draw-space');
@@ -72,6 +64,8 @@ class Renderer {
                 );
             }
         }
+
+        this.encaseDrawSpace (mapName);
     }
 
     /**
@@ -89,12 +83,8 @@ class Renderer {
      * @return  {string}  The HTML output of the constructed tile box.
      */
     drawBox (index, tilePath, boardWidth, hidden=false) {
-        var topPX =
-            (this.BOX_HEIGHT_ISOMETRIC / 2) * (index % boardWidth) +
-            ~~(index / boardWidth) * (this.BOX_HEIGHT_ISOMETRIC / 2);
-        var leftPX =
-            (this.BOX_WIDTH_ISOMETRIC / 2) * (index % boardWidth) -
-            ~~(index / boardWidth) * (this.BOX_WIDTH_ISOMETRIC / 2);
+        var topPX = this.BOX_SIZE * ~~(index / boardWidth);
+        var leftPX = this.BOX_SIZE * (index % boardWidth);
 
         var style =
             'style = "' +
@@ -132,6 +122,18 @@ class Renderer {
             'background-image: url(\'content/img/tile/player.png\');';
 
         return '<div id = "player" style = ' + style + '></div>';
+    }
+
+    /**
+     * Sets the height and width of the draw-space div so as to allow for each
+     * map panning on a container of absolute (non-inline) elements.
+     */
+    encaseDrawSpace (mapName) {
+        var boardWidth = maps[mapName]['width'];
+        var totalTiles = maps[mapName]['data'].length;
+
+        this.drawSpace.style.width = boardWidth * this.BOX_SIZE + 'px';
+        this.drawSpace.style.height = ~~(totalTiles / boardWidth) * this.BOX_SIZE + 'px';
     }
 
     /**
