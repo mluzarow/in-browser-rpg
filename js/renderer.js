@@ -162,7 +162,7 @@ class Renderer {
                 document.getElementById ('draw-space-container'),
                 null
             ).getPropertyValue ('width');
-
+            
         return parseFloat (widthGet.substr (0, widthGet.length - 2));
     }
 }

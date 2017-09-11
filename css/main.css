@@ -25,7 +25,7 @@ body {
 
 #draw-space {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     transform: rotateX(60deg) rotateY(0deg) rotateZ(-45deg);
 }
 
@@ -37,6 +37,10 @@ body {
     border: 1px solid black;
     height: 40px;
     width: 40px;
+}
+
+.grid_box:hover {
+    opacity: 0.4;
 }
 
 .grid_box_hidden {
